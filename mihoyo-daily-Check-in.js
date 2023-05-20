@@ -216,7 +216,9 @@ function run() {
     all += "Tears of Themis:\n" + info_themis +"\n";
   }
 
-  sendDiscordWebhook(Discord_webhook,all,"Mihoyo Daily Check-in")
+  if (Discord_webhook !== null){
+    sendDiscordWebhook(Discord_webhook,all,"Mihoyo Daily Check-in")
+  }
 }
 
 

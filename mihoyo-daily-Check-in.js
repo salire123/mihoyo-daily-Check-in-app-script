@@ -114,7 +114,7 @@ function game_perform_checkin(account_ident, game, cookie_str, language) {
 
   if (code === RET_CODE_ALREADY_SIGNED_IN) {
     console.info("Already signed in for today...");
-    var reward = awards[total_sign_in_day - 1];
+    var reward = awards[total_sign_in_day];
     var manager = "Already signed in for today >w<\n";
     manager += "```\n"
     manager += "\tTotal Sign-in Days: " + total_sign_in_day + "\n";
@@ -126,7 +126,7 @@ function game_perform_checkin(account_ident, game, cookie_str, language) {
     console.error(response.message);
   }
 
-  var reward = awards[total_sign_in_day - 1];
+  var reward = awards[total_sign_in_day];
 
   console.info("Check-in complete!");
   console.info("\tTotal Sign-in Days: " + (total_sign_in_day + 1));
@@ -151,7 +151,6 @@ function sendDiscordWebhook(discord_webhook, message, username) {
 
   // Create payload object
   var payload = {
-    content: message,
     username: username,
     avatar_url: "https://i.imgur.com/o0hyhmw.png",
     embeds: [

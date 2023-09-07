@@ -3,7 +3,7 @@ var RET_CODE_ALREADY_SIGNED_IN = -5003;
 var GAMES = {
   "genshin": {
     "name": "Genshin Impact",
-    "event_base_url": "https://hk4e-api-os.mihoyo.com/event/sol",
+    "event_base_url": "https://sg-hk4e-api.hoyolab.com/event/sol",
     "act_id": "e202102251931481"
   },
   "starrail": {
@@ -123,7 +123,7 @@ function game_perform_checkin(account_ident, game, cookie_str, language) {
     manager += "```"
     return manager;
   } else if (code !== 0) {
-    console.error(response.message);
+    console.log(response.message);
   }
 
   var reward = awards[total_sign_in_day];
